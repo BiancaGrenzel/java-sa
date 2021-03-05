@@ -1,0 +1,69 @@
+body {
+    background-color: #F1F1F1;
+    font-family: Bahnschrift;
+    font-weight: bold;
+}
+
+.container-salas {
+    padding: 1.5rem;
+    margin-top: 8.5rem;
+    width: 60%;
+    height: 30rem;
+    background-color: white;
+    border-radius: 7px;
+}
+.container-pessoas{
+    background-color: #FBFBFB;
+}
+
+.btn-sair {
+    background-color: #FFDEDE;
+    color: #D46464;
+    border: none;
+    width: 6rem;
+    height: 2.1rem;
+    border-radius: 7px;
+    margin-right: 2%;
+}
+
+.btn-convidar {
+    background-color: #DEFFEF;
+    color: #3D8B65;
+    border: none;
+    width: 6rem;
+    height: 2.1rem;
+    border-radius: 7px;
+    margin-right: 2%;
+}
+
+.btn-novo {
+    background-color: #C3BFFF;
+    color: #441CC1;
+    border: none;
+    width: 6rem;
+    height: 2.1rem;
+    border-radius: 7px;
+    margin-right: 2%;
+}
+.btn-group{
+    padding-left: 30%;
+    
+}
+.salas-nome{
+    width: 20%;
+    display: inline;
+}
+.salas-card{
+    padding-top: 1.5rem;
+}
+.pesquisa-filtro{
+    margin-top: 10px;
+}
+.card-sala{
+    width: 250px;
+    height: 150px;
+    margin: 3px;
+}
+.col-card-salas{
+    width: 100%;
+}
