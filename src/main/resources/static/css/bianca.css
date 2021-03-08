@@ -16,28 +16,29 @@
 
     --grey3:#D8D8D8;
 
-}
-
-.light-mode{
     --container-bg-color:var(--white);
     --body-bg-color:var(--white2);
     --titulo-color:var(--purple);
     --input-switch:var(--grey3);
     --bolinha-switch:var(--white);
-    --subtitulo-section:var(--black)
+    --subtitulo-section:var(--black);
+
+    --home-img-1:url("../imgs/home-1-light.svg");
 }
 
-.dark-mode{
+[data-theme="dark"]{
     --container-bg-color:var(--black);
     --body-bg-color:var(--black2);
     --titulo-color:var(--purple2);
     --input-switch:var(--black3);
     --bolinha-switch:var(--grey2);
-    --subtitulo-section:var(--white)
+    --subtitulo-section:var(--white);
+    --home-img-1:url("../imgs/home-1-dark.svg");
 }
 
 body {
   background-color: var(--body-bg-color);
+  overflow-x: hidden;
 }
 
 * {
@@ -46,7 +47,11 @@ body {
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  transition: background-color 0.6s ease, color 1s ease;
+  /* transition: background-color 0.6s ease, color 1s ease; */
+}
+
+.batata{
+  display: flex;
 }
 
 .container-all {
@@ -54,12 +59,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  
   background-color:var(--container-bg-color);
-}
-
-.batata{
-  display: flex;
+  min-width: 329px;
 }
 
 .container {
@@ -69,6 +70,8 @@ body {
   flex-direction: column;
   position: fixed;
   align-items: center;
+  background-color:var(--container-bg-color);
+  min-width: 329px;
 }
 
 .container-item {
@@ -100,67 +103,6 @@ body {
   color: #acacac;
   margin-left: 10px;
 }
-
-.switch__container{
-    margin-top: 50px;
-}
-
-.switch {
-  position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
-}
-
-.switch + label {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  user-select: none;
-}
-
-.switch--shadow + label {
-  padding: 2px;
-  width: 60px;
-  height: 30px;
-  background-color: none;
-  border-radius: 60px;
-}
-
-.switch--shadow + label:before,
-.switch--shadow + label:after {
-  display: block;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  bottom: 1px;
-  content: "";
-}
-.switch--shadow + label:before {
-  right: 1px;
-  background-color: var(--input-switch);
-  border-radius: 30px;
-  transition: all 0.4s;
-}
-.switch--shadow + label:after {
-  width: 25px;
-  height: 25px;
-  margin-top: 1px;
-  margin-left: 2px;
-  background-color: var(--bolinha-switch);
-  border-radius: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s;
-}
-
-.switch--shadow:checked + label:before {
-  background-color: var(--input-switch);
-}
-.switch--shadow:checked + label:after {
-  transform: translateX(28px);
-  background-color: var(--bolinha-switch);
-}
-
 
 .button-login{
     width: 174px;
@@ -198,17 +140,12 @@ body {
 
 .section-1{
   width: 1520px;
-  height: 1000px;
+  height: 100vh;
 
 }
 
-.background-1-light{
-  background-image: url("../imgs/fundo-1.svg");
-  background-repeat: no-repeat;
-}
-
-.background-1-dark{
-  background-image: url("../imgs/fundo-1-dark.svg");
+.background-1{
+  background-image: var(--home-img-1);
   background-repeat: no-repeat;
 }
 
@@ -260,3 +197,70 @@ body {
 .img-1{
 width: 100%;
 }
+
+/*slider switch css */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+  margin-top: 50px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #292929;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: rgb(146, 146, 146);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+@media screen and (min-width: 1920px) {
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
