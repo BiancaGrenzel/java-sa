@@ -99,26 +99,113 @@
                         <button class="button-home-1">conheça os planos!</button>
                     </div>
                     <div class="container-2">
-                        <img src="../static/imgs/vector.png" alt="" class="img-1">
+                        <img id="img-2-light" src="../static/imgs/home-2-light.svg" alt="" class="show">
+                        <img id="img-2-dark" src="../static/imgs/home-2-dark.svg" alt="" class="hidden">
                     </div>
                 </div>
             </section>
-            <section class="section-1 background-1" id="section-1">
+            
+            <section class="section-1 background-2" id="section-1">
                 <div class="container-home-1">
                     <div class="container-1">
-                        <h1 class="titulo-home-1">organize os horários de
-                            qualquer sala, auditório
-                            ou escritório!</h1>
+                        <div class="container-columns display-flex justify-center">
+                            <div class="container-columns-inside display-flex justify-center">
+                                <img src="../static/imgs/idea-img-light.svg" alt=""></img>
+                                <p class="texto">Lorem ipsum tortor justo inceptos id nam
+                                    convallis neque nullam, orci bibendum
+                                    lacus adipiscing fringilla pellentesque </p>
+                            </div>
+                        </div>
+                        <div class="container-columns display-flex justify-center">
+                            <div class="container-columns-inside display-flex justify-center">
+                                <img src="../static/imgs/calendar-img-light.svg" alt="">
+                                <p class="texto">Lorem ipsum tortor justo inceptos id nam
+                                    convallis neque nullam, orci bibendum
+                                    lacus adipiscing fringilla pellentesque </p>
+                            </div>
+                        </div>
+                        <div class="container-columns display-flex justify-center">
+                            <div class="container-columns-inside display-flex justify-center">
+                                <img src="../static/imgs/spaceship-img-light.svg" alt="">
+                                <p class="texto">Lorem ipsum tortor justo inceptos id nam
+                                    convallis neque nullam, orci bibendum
+                                    lacus adipiscing fringilla pellentesque </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-2">
+                        <h1 class="titulo-home-1">o melhor jeito de
+                            organizar sua empresa!
+                            simples, rápido e fácil!</h1>
+                        <div class="linha"></div>
                         <p class="subtitulo-home-1">A melhor opção para organizar seu espaço de trabalho,
                             academia ou até lazer.
                             Com o betterclass tudo fica mais fácil!</p>
-                        <button class="button-home-1">conheça os planos!</button>
-                    </div>
-                    <div class="container-2">
-                        <img src="../static/imgs/vector.png" alt="" class="img-1">
                     </div>
                 </div>
             </section>
+
+            <section class="section-1 background-3" id="section-1">
+                <div class="container-home-2">
+                    <div class="container-1">
+                        <h1 class="titulo-1">melhores planos</h1>
+                        <p class="subtitulo subt-sect-3">melhore planos para você, independente de ser 
+                            uma empresa, uma instituição ou pessoa!</p>
+                    </div>
+                    <div class="container-3">
+                        <div class="card-1 display-flex justify-center direction-column">
+                            <h1 class="titulo-2">Básico</h1>
+                            <h2 class="subtitulo-2">gratuito</h2>
+                            <p class="txt-2">Lorem ipsum tortor justo 
+                                inceptos id nam convallis 
+                                neque nullam, orci.</p>
+                            <button class="button-login button-planos">assinar</button>
+                        </div>
+                        <div class="card-2 display-flex justify-center direction-column">
+                            <h1 class="titulo-2">Médio</h1>
+                            <h2 class="subtitulo-2">R$99,99</h2>
+                            <p class="txt-2">Lorem ipsum tortor justo 
+                                inceptos id nam convallis 
+                                neque nullam, orci.</p>
+                            <button class="button-login button-planos">assinar</button>
+                        </div>
+                        <div class="card-1 display-flex justify-center direction-column">
+                            <h1 class="titulo-2">Especial</h1>
+                            <h2 class="subtitulo-2">R$199,99</h2>
+                            <p class="txt-2">Lorem ipsum tortor justo 
+                                inceptos id nam convallis 
+                                neque nullam, orci.</p>
+                            <button class="button-login button-planos">assinar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-1 background-2" id="section-1">
+                <div class="container-home-2">
+                    <div class="container-home-2">
+                        <h1 class="titulo-1">Como você deseja falar com a gente?</h1>
+                    </div>
+                    <div class="container-4 ">
+                        <div class="card-3 display-flex justify-center direction-column">
+                            <h1 class="titulo-3">E-mail</h1>
+                            <h2 class="subtitulo">Tem alguma dúvida?</h2>
+                            <p class="txt-3">inspiration@gmail.com</p>
+                        </div>
+                        <div class="card-4 display-flex justify-center direction-column">
+                            <h1 class="titulo-3">Telefone</h1>
+                            <h2 class="subtitulo">Tem alguma dúvida?</h2>
+                            <p class="txt-3">48 XXXX-XXXX</p>
+                        </div>
+                        <div class="card-5 display-flex justify-center direction-column">
+                            <h1 class="titulo-3">E-mail</h1>
+                            <h2 class="subtitulo">Tem alguma dúvida?</h2>
+                            <p class="txt-3">inspiration@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
     <script>
@@ -126,11 +213,15 @@
         const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
         const currentTheme = localStorage.getItem('theme');
 
+
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
-
             if (currentTheme === 'dark') {
                 toggleSwitch.checked = true;
+                document.getElementById('img-2-light').classList.add('hidden');
+                document.getElementById('img-2-light').classList.remove('show');
+                document.getElementById('img-2-dark').classList.add('show');
+                document.getElementById('img-2-dark').classList.remove('hidden');
             }
         }
 
@@ -138,46 +229,22 @@
             if (e.target.checked) {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
+                document.getElementById('img-2-light').classList.add('hidden');
+                document.getElementById('img-2-light').classList.remove('show');
+                document.getElementById('img-2-dark').classList.add('show');
+                document.getElementById('img-2-dark').classList.remove('hidden');
             }
             else {
                 document.documentElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
+                document.getElementById('img-2-light').classList.remove('hidden');
+                document.getElementById('img-2-light').classList.add('show');
+                document.getElementById('img-2-dark').classList.remove('show');
+                document.getElementById('img-2-dark').classList.add('hidden');
             }
         }
 
         toggleSwitch.addEventListener('change', switchTheme, false);
-
-        // const themeSwitch = document.querySelector("input");
-        // if (localStorage.getItem("dark-mode")) {
-        //     document.getElementById("section-1").classList.add("background-1-dark");
-        //     themeSwitch.checked = true;
-        //     document.body.classList.add("dark-mode");
-        //     document.body.classList.remove("light-mode");
-        // } else {
-        //     document.getElementById("section-1").classList.add("background-1-light");
-        //     document.body.classList.add("light-mode");
-        //     document.body.classList.remove("dark-mode");
-        //     themeSwitch.checked = false;
-        // }
-
-        // themeSwitch.addEventListener("change", () => {
-        //     document.body.classList.toggle("dark-mode");
-        //     if (localStorage.getItem("dark-mode")) {
-        //         document.getElementById("section-1").classList.add("background-1-dark");
-        //         document.getElementById("section-1").classList.remove("background-1-light");
-        //         localStorage.removeItem("dark-mode");
-        //         document.body.classList.add("dark-mode");
-        //         document.body.classList.remove("light-mode");
-        //     } else {
-        //         document.getElementById("section-1").classList.add("background-1-light");
-        //         document.getElementById("section-1").classList.remove("background-1-dark");
-        //         localStorage.setItem("dark-mode", true);
-        //         document.body.classList.add("light-mode");
-        //         document.body.classList.remove("dark-mode");
-        //     }
-
-        // });
-
     </script>
 </body>
 
